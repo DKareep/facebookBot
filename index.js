@@ -3,15 +3,17 @@ var bodyParser = require('body-parser');
 var app = express();
 var request = require('request');
 app.use(bodyParser.urlencoded({extended: false}));
+
+// parsers json send to server and calls dibs on it before server start processing raw json
 app.use(bodyParser.json());
 app.listen(process.env.PORT);
 
-
+// for testing server
 app.get('/hello', function (req, res) {
     res.send('Hello World!');
 });
 
-// to verify
+// to verify fb bot
 app.get('/webhook/', function (req, res) {
     if (req.query['hub.verify_token'] === '<secret key>') {
         res.send(req.query['hub.challenge']);
@@ -21,7 +23,7 @@ app.get('/webhook/', function (req, res) {
 
 //reply message
 var token = "<token>";
-
+// function to echo message
 function sendTextMessage(sender, text) {
     messageData = {
         text: text
