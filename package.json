@@ -1,0 +1,20 @@
+{
+  "name": "lookupbot",
+  "version": "1.0.0",
+  "description": "lookup bot",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.com:DKareep/lookupbot.git"
+  },
+  "author": "otakalana",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.1",
+    "express": "^4.13.4",
+    "request": "^2.72.0"
+  }
+}
